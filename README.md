@@ -13,15 +13,77 @@ A complete movie recommendation system built with **PCA**, **K-Nearest Neighbors
 
 ```
 movie-recommender/
-├── ml-service/          # Python ML Backend (Flask)
-│   ├── src/             # Preprocessing, Training & Viz
-│   ├── data/            # TMDB Datasets
-│   ├── models/          # Saved Model Artifacts
-│   └── app.py           # ML API
-├── backend/             # Node.js Gateway (Express)
-│   ├── src/             # Controllers & Services
-│   └── server.js        # Backend API
-└── frontend/            # React Client (Vite)
+│
+├── .git/                                    # Git version control
+├── .gitignore
+├── README.md
+├── __pycache__/
+├── venv/                                    # Python virtual environment
+│
+├── backend/                                 # Node.js/Express Backend (API Gateway)
+│   ├── .env
+│   ├── app.py
+│   ├── server.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── node_modules/
+│   └── src/
+│       ├── controllers/
+│       │   └── movieController.js
+│       ├── routes/
+│       │   └── movies.js
+│       ├── services/
+│       │   └── mlService.js
+│       └── utils/
+│           └── errorHandler.js
+│
+├── frontend/                                # React/Vite Frontend
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── node_modules/
+│   ├── public/                              # (empty)
+│   └── src/
+│       ├── App.css
+│       ├── App.jsx
+│       ├── index.css
+│       ├── main.jsx
+│       ├── components/
+│       │   ├── LoadingSpinner.jsx
+│       │   ├── MovieCard.jsx
+│       │   ├── MovieGrid.jsx
+│       │   └── SearchBar.jsx
+│       └── services/
+│           └── api.js
+│
+├── ml-service/                              # Python/Flask ML Service
+│   ├── README.md
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── venv/
+│   ├── data/
+│   │   ├── tmdb_5000_credits.csv
+│   │   └── tmdb_5000_movies.csv
+│   ├── models/                              # Trained model artifacts
+│   │   ├── X_reduced.joblib
+│   │   ├── knn.joblib
+│   │   ├── meta.joblib
+│   │   ├── svd.joblib
+│   │   ├── titles.joblib
+│   │   └── vectorizer.joblib
+│   ├── notebooks/
+│   │   └── analysis.ipynb
+│   └── src/
+│       ├── __pycache__/
+│       ├── data_preprocessing.py
+│       ├── evaluator.py
+│       ├── model_builder.py
+│       └── visualizer.py
+│
+└── docs/                                    # Documentation
+    ├── architecture.md
+    └── screenshots/
 ```
 
 ## 🛠️ Setup Instructions
